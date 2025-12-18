@@ -30,7 +30,7 @@ jobs:
       - name: Install CRDA
         uses: redhat-actions/openshift-tools-installer@v1
         with:
-          crda: latest
+          crda: 0.4.15
           source: github
 
       - name: SCA (CRDA) Scan
@@ -54,5 +54,6 @@ jobs:
 
       - name: Print artifact name
         run: echo "${{ steps.scan.outputs.artifact_name }}"
+
 
 
