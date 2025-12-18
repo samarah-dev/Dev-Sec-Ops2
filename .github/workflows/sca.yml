@@ -33,6 +33,11 @@ jobs:
           crda: 0.2.5
           source: github
 
+      - name: Force DNS refresh
+          run: | 
+            sudo systemctl restart systemd-resolved
+            resolvectl status
+
       - name: SCA (CRDA) Scan
         id: scan
         uses: redhat-actions/crda@v1.2
