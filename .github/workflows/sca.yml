@@ -34,9 +34,9 @@ jobs:
           source: github
 
       - name: Force DNS refresh
-          run: | 
-            sudo systemctl restart systemd-resolved
-            resolvectl status
+        run: |
+          sudo systemctl restart systemd-resolved
+          resolvectl status
 
       - name: SCA (CRDA) Scan
         id: scan
@@ -59,6 +59,7 @@ jobs:
 
       - name: Print artifact name
         run: echo "${{ steps.scan.outputs.artifact_name }}"
+
 
 
 
